@@ -11,6 +11,19 @@
 #include <dt-bindings/zmk/rgb.h>
 
 / {
+    
+    behaviors {
+        td_mo2_tog3: tap_dance_layers {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_LAYERS";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            // First touch | keep layer 2 
+            //   Second touch | Toggle layer 3
+            bindings = <&mo 2>, <&tog 3>;
+        };
+    };
+    
     keymap {
         compatible = "zmk,keymap";
 
